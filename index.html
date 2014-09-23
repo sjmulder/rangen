@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<meta name="viewport" content="width=500">
+
+<style>
+	.card {
+		width: 500px;
+		margin: 40px auto;
+	}
+
+	.card img {
+		float: left;
+		border: none;
+		box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	.card span {
+		display: block;
+		font-family: sans-serif;
+		font-weight: lighter;
+		font-size: 24px;
+		padding-top: 10px;
+		margin-left: 120px;
+	}
+</style>
+
+<div class="card">
+	<img width="100" height="176">
+	<span></span>
+</div>
+
+<script>
+(function() {
+	'use strict';
+
+	var cards = [
+		'KL Brigadegeneraal',
+		'KL Eerste luitenant',
+		'KL Generaal-majoor',
+		'KL Generaal',
+		'KL Kapitein',
+		'KL Kolonel',
+		'KL Korporaal der 1e klasse',
+		'KL Korporaal',
+		'KL Luitenant-generaal',
+		'KL Luitenant-kolonel',
+		'KL Majoor',
+		'KL Sergeant der 1e klasse',
+		'KL Sergeant-majoor',
+		'KL Sergeant',
+		'KL Soldaat der 1e klasse',
+		'KL Soldaat der 2e klasse',
+		'KL Soldaat der 3e klasse',
+		'KL Tweede luitenant',
+		'KL Vaandrig, Kapelmeester, Adjudant-onderofficier',
+		'KL Vaandrig',
+		'KLu Commodore',
+		'KLu Eerste luitenant',
+		'KLu Generaal-majoor',
+		'KLu Generaal',
+		'KLu Kapitein',
+		'KLu Kolonel',
+		'KLu Korporaal der 1e klasse',
+		'KLu Korporaal',
+		'KLu Luitenant-generaal',
+		'KLu Luitenant-kolonel',
+		'KLu Majoor',
+		'KLu Sergeant der 1e klasse',
+		'KLu Sergeant-majoor',
+		'KLu Sergeant',
+		'KLu Soldaat der 1e klasse',
+		'KLu Soldaat der 2e klasse',
+		'KLu Soldaat der 3e klasse',
+		'KLu Tweede luitenant',
+		'KLu Vaandrig',
+		'KM Adjudant-onderofficier',
+		'KM Admiraal',
+		'KM Commandeur',
+		'KM Kapitein ter zee',
+		'KM Kapitein-luitenant ter zee',
+		'KM Korporaal',
+		'KM Luiteant ter zee 1e klasse',
+		'KM Luitenant ter zee 2e klasse oudste categorie',
+		'KM Luitenant ter zee 2e klasse',
+		'KM Luitenant ter zee 3e klasse',
+		'KM Luitenant-admiraal',
+		'KM Matroos der 1e klasse',
+		'KM Matroos der 2e klasse',
+		'KM Matroos der 3e klasse',
+		'KM Schout-bij-nacht',
+		'KM Sergeant-majoor',
+		'KM Sergeant',
+		'KM Vice-admiraal',
+		'KMar Brigadegeneraal',
+		'KMar Eerste luitenant',
+		'KMar Generaal-majoor',
+		'KMar Kapitein',
+		'KMar Kolonel',
+		'KMar Kornet, Adjudant-onderofficier',
+		'KMar Luitenant-generaal',
+		'KMar Luitenant-kolonel',
+		'KMar Majoor',
+		'KMar Marechaussee der 1e klasse',
+		'KMar Marechaussee der 2e klasse',
+		'KMar Marechaussee der 3e klasse',
+		'KMar Marechaussee der 4e klasse',
+		'KMar Opperwachtmeester',
+		'KMar Tweede luitenant',
+		'KMar Wachtmeester der 1e klasse',
+		'KMar Wachtmeester'
+	];
+
+	var img = document.querySelector('.card img')
+	var span = document.querySelector('.card span')
+
+	var card = null;
+	var isRevealed = false;
+
+	function advance() {
+		if (!card || isRevealed) {
+			card = cards[Math.floor(Math.random() * cards.length)];
+			img.src = 'img/' + card + '.png';
+			span.innerText = '';
+
+			isRevealed = false;
+		} else {
+			span.innerText = card;
+
+			isRevealed = true;
+		}
+	}
+
+	document.addEventListener('click', advance);
+	document.addEventListener('touchdown', advance);
+
+	advance();
+})();
+</script>
+
